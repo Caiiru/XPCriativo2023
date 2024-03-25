@@ -13,10 +13,16 @@ var dir = 1
 var Power1 = 0
 var Power2 = 0
 
+var WaterLimiter = 10
+var speedRNG = RandomNumberGenerator.new()
+
 @onready var spriteDir := $anim as AnimatedSprite2D
 
 # Export the projectile logic to playerControl
 @export var projectile : PackedScene
+
+# Particle for testing
+@export var particle : PackedScene
 
 func _physics_process(delta):
 	# Generic Godot Platform Movement
@@ -45,13 +51,17 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_LEFT):
 		spriteDir.scale.x = -1
 		dir = -1
-		
+	# Projectile Delay Counter
+	if true:
+		shootDelay = shootDelay - 1
 	# If D is pressed, shoot
 	if Input.is_key_pressed(KEY_D):
 		shoot()
-		# Also a timer for that
-	if true:
-		shootDelay = shootDelay - 1
+		# Testing particles!
+		#if shootDelay <= 1:
+			#var d = projectile.instantiate()
+			#get_parent().add_child(d)
+			#d.global_position = $aim.global_position
 	
 	# Debug Keys
 	if Input.is_key_pressed(KEY_U): Power1 = 0
@@ -70,6 +80,8 @@ func shoot():
 	
 	# ~~ TIROS ISOLADOS ~~
 	# Esses aqui só tem valor em um dos slots. Não nos dois.
+	# Nessa versão do projeto vou manter assim.
+	# Eventualmente pretendo alterar isso para vários scripts e objetos, à sugestão do Cairu.
 	
 	# Tiro de Fogo, velocidade constante e normal, dano moderado
 	if shootDelay <= 0 and Power1 == 1 and Power2 == 0 or shootDelay <= 0 and Power1 == 0 and Power2 == 1:
@@ -86,6 +98,7 @@ func shoot():
 		
 	# Tiro de vento. Lento, mas acelera com o tempo e causa mais dano
 	if shootDelay <= 0 and Power1 == 2 and Power2 == 0 or shootDelay <= 0 and Power1 == 0 and Power2 == 2:
+		
 		var p = projectile.instantiate()
 		get_parent().add_child(p)
 		if dir == 1: p.dir = 1
@@ -96,6 +109,22 @@ func shoot():
 		p.scale.x = 2
 		p.global_position = $aim.global_position
 		shootDelay = 50
+		
+	# Tiro de água. spammável, mas pequeno e quica no chão
+	if shootDelay <= 0 and Power1 == 3 and Power2 == 0 or shootDelay <= 0 and Power1 == 0 and Power2 == 3:
+		if WaterLimiter > 0:
+			var p = projectile.instantiate()
+			get_parent().add_child(p)
+			if dir == 1: p.dir = 1
+			else: p.dir = -1
+			p.ispeed = speedRNG.randf_range(200, 350)
+			p.ySpeed = -10
+			p.scale.y = 0.5
+			p.scale.x = 0.5
+			p.global_position = $aim.global_position
+			p.gravityBullet = true
+			shootDelay = 10
+			WaterLimiter = WaterLimiter - 1
 
 
 func _on_projectile_tree_exited():

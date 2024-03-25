@@ -9,4 +9,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	animation.play("default")
+	if animation.animation_finished:
+		queue_free()
 	pass

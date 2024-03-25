@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmj5yq1jgey5k" path="res://assets_placeholders/PC Computer - Cave Story Dokutsu Monogatari - Quote & Items (1).png" id="2_ij14h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1ntl"]
+size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j8i1"]
 atlas = ExtResource("2_ij14h")
@@ -35,6 +36,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ggdwj")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"default",
@@ -42,12 +46,12 @@ animations = [{
 }]
 
 [node name="particle" type="Area2D"]
+texture_filter = 1
 script = ExtResource("1_76pgb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_a1ntl")
+disabled = true
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aptyv")
-frame = 3
-frame_progress = 1.0
