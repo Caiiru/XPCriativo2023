@@ -1,8 +1,8 @@
-# XPCriativo2024
+# Branch Development - Caio
 
-## Informações
+## Game Design Document
 
-**Gênero:** _Plataformer, Shooter com elementos de Roguelike_
+- **Version** _1.0_
 
-**Engine:** _Godot_
+_Date: 25/03/2024_
 
