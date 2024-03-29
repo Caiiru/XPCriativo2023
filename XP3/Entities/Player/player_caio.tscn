@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsqj5vbd6wmrd"]
+[gd_scene load_steps=8 format=3 uid="uid://bsqj5vbd6wmrd"]
 
 [ext_resource type="Texture2D" uid="uid://c17wvvmhaok5f" path="res://Entities/Player/Art/Placeholder/player_sprite_placeholder.png" id="1_htdhs"]
-[ext_resource type="Resource" uid="uid://d13d0w8x5pgm6" path="res://Entities/Player/Scripts/player_movement_stats.tres" id="4_cbpyl"]
-[ext_resource type="Script" path="res://Entities/Player/Scripts/Player_PlatformerMovement.gd" id="5_8uwux"]
-[ext_resource type="Script" path="res://Entities/Player/Scripts/Player_Jump.gd" id="5_h6alq"]
+[ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_PlatformerMovement.gd" id="2_g21dw"]
+[ext_resource type="Resource" uid="uid://d13d0w8x5pgm6" path="res://Entities/Player/Scripts/Controller/player_movement_stats.tres" id="3_xsb20"]
+[ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_Jump.gd" id="4_n26ro"]
+[ext_resource type="Script" path="res://Entities/Player/Scripts/Entity/PlayerEntity.gd" id="5_v1joy"]
+[ext_resource type="Resource" uid="uid://ma2eww7msg5s" path="res://Entities/Player/Scripts/Entity/PlayerEntityStats.tres" id="6_um2ne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqm1"]
 size = Vector2(20, 17.5)
@@ -21,11 +23,18 @@ scale = Vector2(0.68, 1)
 shape = SubResource("RectangleShape2D_2vqm1")
 
 [node name="PlatformerMovement" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("5_8uwux")
+script = ExtResource("2_g21dw")
 actor = NodePath("..")
-playerMovementStats = ExtResource("4_cbpyl")
+playerMovementStats = ExtResource("3_xsb20")
 
 [node name="PlayerJump" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("5_h6alq")
-stats = ExtResource("4_cbpyl")
+script = ExtResource("4_n26ro")
+stats = ExtResource("3_xsb20")
+actor = NodePath("..")
+
+[node name="PlayerEntity" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("5_v1joy")
+attack = true
+damageToTake = 10
+stats = ExtResource("6_um2ne")
 actor = NodePath("..")

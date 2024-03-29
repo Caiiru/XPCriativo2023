@@ -34,8 +34,7 @@ var _frameLeftGround:float = -3.40282347
 func _process(delta):
 	GatherInput()
 	_time+=delta
-	
-	print_debug(canUseCoyote)
+	 
 	  
 	
 
