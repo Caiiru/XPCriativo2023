@@ -11,10 +11,12 @@ size = Vector2(20, 17.5)
 [node name="Player_Caio" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.875, 1)
 texture = ExtResource("1_htdhs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.27826e-07, -0.75)
+position = Vector2(0, -1)
 scale = Vector2(0.68, 1)
 shape = SubResource("RectangleShape2D_2vqm1")
 
@@ -25,5 +27,5 @@ playerMovementStats = ExtResource("4_cbpyl")
 
 [node name="PlayerJump" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("5_h6alq")
-player_movement_stats = ExtResource("4_cbpyl")
+stats = ExtResource("4_cbpyl")
 actor = NodePath("..")

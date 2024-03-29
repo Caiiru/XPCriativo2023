@@ -18,6 +18,6 @@ func _process(delta):
 	Move(playerInputs)
 	
 func Move(dir:Vector2): 
-	actor.velocity = Vector2((dir.x*playerMovementStats.max_speed), actor.velocity.y)
+	actor.velocity = Vector2((dir.x*playerMovementStats.speed), actor.velocity.y)
 	
 	

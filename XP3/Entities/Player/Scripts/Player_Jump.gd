@@ -1,33 +1,97 @@
 class_name PlayerJump
 extends Node
 
-@export var player_movement_stats: PlataformerMovementStats
+#region Imports
+@export var stats:PlataformerMovementStats
 @export var actor:CharacterBody2D
+#endregion
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
- 
+var _time:float
 
-@onready var jump_velocity:float = ((2.0 * player_movement_stats.jump_height) / player_movement_stats.jump_time_to_peak)*-1
-@onready var jump_gravity:float = ((-2.0 * player_movement_stats.jump_height) / (player_movement_stats.jump_time_to_peak * player_movement_stats.jump_time_to_peak)) * -1
-@onready var fall_gravity:float = ((-2.0 * player_movement_stats.jump_height) / (player_movement_stats.jump_time_to_descent * player_movement_stats.jump_time_to_descent))*-1
+#region Inputs
 
+var JumpDown:bool
+var JumpHeld:bool
+#endregion
 
- 
+#region Collision Variables
+var _grounded:bool
+#endregion
 
-func get_gravity() -> float:
-	if(actor.velocity.y < 0):
-		return jump_gravity
+#region Jump variables
+var _jumpToConsume:bool = false
+var _endedJumpEarly:bool = false
+var _timeJumpWasPressed:float = -5
+var _bufferedJumpUsable:bool = false
+var hasBufferedJump:bool = false
+
+var _coyoteUsable:bool = false
+var canUseCoyote:bool = false
+
+var _frameLeftGround:float = -3.40282347
+#endregion
+
+func _process(delta):
+	GatherInput()
+	_time+=delta
 	
-	return fall_gravity
-
-func _process(delta): 
-	actor.velocity.y += get_gravity() * delta
+	print_debug(canUseCoyote)
+	  
 	
-	if(Input.is_action_just_pressed("ui_accept") && actor.is_on_floor() ):
-		Jump()
-  
-	 
 
-func Jump(): 
-	actor.velocity.y = jump_velocity
+func GatherInput():
+	JumpDown = Input.is_action_just_pressed("ui_accept")
+	JumpHeld = Input.is_action_pressed("ui_accept")
+	
+	if(JumpDown):
+		_jumpToConsume = true
+		_timeJumpWasPressed = _time   
+		
+	hasBufferedJump = _bufferedJumpUsable && (_time < _timeJumpWasPressed + stats.jumpBuffering_time)
+	canUseCoyote = _coyoteUsable && !_grounded && _time<_frameLeftGround + stats.coyote_time
+
+func _physics_process(delta):
+	CheckCollision()
+	HandleJump()
+	HandleGravity(delta)
+
+
+func CheckCollision():
+	var groundHit:bool = actor.is_on_floor()
+	
+	if(!_grounded && groundHit): #landed
+		_grounded = true
+		_endedJumpEarly = false 
+		_bufferedJumpUsable = true
+		_coyoteUsable = true
+	else: if(_grounded && !groundHit): #left ground
+		_grounded = false 
+		_frameLeftGround = _time
+
+
+func HandleJump():
+	if(!_endedJumpEarly && !_grounded && !JumpHeld && actor.velocity.y < 0):
+		_endedJumpEarly = true 
+	if(!_jumpToConsume && !hasBufferedJump): return
+	if(_grounded || canUseCoyote):
+		ExecuteJump() 
+	_jumpToConsume=false
+	
+func ExecuteJump(): 
+	_endedJumpEarly = false
+	_jumpToConsume = false
+	_bufferedJumpUsable = false
+	_coyoteUsable = false
+	_timeJumpWasPressed = 0
+	actor.velocity.y = -(stats.jumpForce * 5)
+	
+
+func HandleGravity(delta):
+	if(_grounded && actor.velocity.y > 0):
+		actor.velocity.y = stats.groundingForce
+	else:
+		var inAirGravity = stats.fallAcceleration
+		if(_endedJumpEarly && actor.velocity.y < 0 ):
+			inAirGravity *= stats.jumpEndEarlyGravityModifier  
+		actor.velocity.y = move_toward(actor.velocity.y, stats.fallAcceleration, inAirGravity * get_physics_process_delta_time())
  
