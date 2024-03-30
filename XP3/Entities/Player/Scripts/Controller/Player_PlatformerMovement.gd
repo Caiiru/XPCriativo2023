@@ -19,5 +19,9 @@ func _process(delta):
 	
 func Move(dir:Vector2): 
 	actor.velocity = Vector2((dir.x*playerMovementStats.speed), actor.velocity.y)
+	if(actor.velocity.x > 0):
+		print_debug("Going right")
+	if(actor.velocity.y<0):
+		print_debug("Going Left")
 	
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsqj5vbd6wmrd"]
+[gd_scene load_steps=11 format=3 uid="uid://bsqj5vbd6wmrd"]
 
 [ext_resource type="Texture2D" uid="uid://c17wvvmhaok5f" path="res://Entities/Player/Art/Placeholder/player_sprite_placeholder.png" id="1_htdhs"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_PlatformerMovement.gd" id="2_g21dw"]
@@ -6,9 +6,15 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_Jump.gd" id="4_n26ro"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Entity/PlayerEntity.gd" id="5_v1joy"]
 [ext_resource type="Resource" uid="uid://ma2eww7msg5s" path="res://Entities/Player/Scripts/Entity/PlayerEntityStats.tres" id="6_um2ne"]
+[ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_Aim.gd" id="7_yt30x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqm1"]
 size = Vector2(20, 17.5)
+
+[sub_resource type="Gradient" id="Gradient_b63mq"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l0chb"]
+gradient = SubResource("Gradient_b63mq")
 
 [node name="Player_Caio" type="CharacterBody2D"]
 
@@ -38,3 +44,13 @@ attack = true
 damageToTake = 10
 stats = ExtResource("6_um2ne")
 actor = NodePath("..")
+
+[node name="Marker2D" type="Marker2D" parent="." node_paths=PackedStringArray("aim", "actor")]
+position = Vector2(6, 0)
+script = ExtResource("7_yt30x")
+aim = NodePath(".")
+actor = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
+scale = Vector2(0.005, 2)
+texture = SubResource("GradientTexture1D_l0chb")
