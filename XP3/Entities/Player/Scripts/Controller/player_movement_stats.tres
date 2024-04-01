@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlataformerMovementStats" load_steps=2 format=3 uid="uid://d13d0w8x5pgm6"]
+
+[ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/movementStats_Resource.gd" id="1_k1nc1"]
+
+[resource]
+script = ExtResource("1_k1nc1")
+speed = 150.0
+jump_height = 400.0
+jump_time_to_peak = 0.25
+jump_time_to_descent = 0.175
+coyote_time = 0.3
+jumpBuffering_time = 0.3
+groundingForce = -1.5
+jumpForce = 62.0
+jumpEndEarlyGravityModifier = 8.0
+fallAcceleration = 825.0

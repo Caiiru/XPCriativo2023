@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EntityResource" load_steps=2 format=3 uid="uid://ma2eww7msg5s"]
+
+[ext_resource type="Script" path="res://Entities/Scripts/EntityResource.gd" id="1_w41p2"]
+
+[resource]
+script = ExtResource("1_w41p2")
+current_HP = 10
+max_HP = 10
