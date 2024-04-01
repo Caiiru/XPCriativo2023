@@ -28,10 +28,11 @@ position = Vector2(0, -1)
 scale = Vector2(0.68, 1)
 shape = SubResource("RectangleShape2D_2vqm1")
 
-[node name="PlatformerMovement" type="Node" parent="." node_paths=PackedStringArray("actor")]
+[node name="PlatformerMovement" type="Node" parent="." node_paths=PackedStringArray("actor", "sprite")]
 script = ExtResource("2_g21dw")
 actor = NodePath("..")
 playerMovementStats = ExtResource("3_xsb20")
+sprite = NodePath("../Sprite2D")
 
 [node name="PlayerJump" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("4_n26ro")

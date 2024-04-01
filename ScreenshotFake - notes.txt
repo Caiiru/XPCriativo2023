@@ -1,0 +1,14 @@
+- Screenshot fake: 
+	-Player
+	- 1-2 Enemys
+	-Layout:
+		- Tilemap 
+		- Exit Portal ( Show an exit to next level)
+		- Prop
+
+	- Any Player Skill
+	- Any Enemy Skill (Projectile)
+	-UI:
+		-Player Life
+		-Skills Icons
+		-Enemy Life (Slider)

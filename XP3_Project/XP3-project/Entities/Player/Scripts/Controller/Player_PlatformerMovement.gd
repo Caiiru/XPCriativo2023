@@ -3,6 +3,7 @@ extends Node
 
 @export var actor:CharacterBody2D   
 @export var playerMovementStats:PlataformerMovementStats
+@export var sprite:Sprite2D
 
 var playerInputs:Vector2
 
@@ -21,7 +22,12 @@ func Move(dir:Vector2):
 	actor.velocity = Vector2((dir.x*playerMovementStats.speed), actor.velocity.y)
 	if(actor.velocity.x > 0):
 		print_debug("Going right")
+		sprite.flip_h
+
+		
+		
+		
 	if(actor.velocity.y<0):
 		print_debug("Going Left")
-	
+		
 	
