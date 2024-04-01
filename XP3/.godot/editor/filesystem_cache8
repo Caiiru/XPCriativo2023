@@ -1,0 +1,40 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1711970795
+icon.svg::CompressedTexture2D::4475426808852330472::1711970773::1711970795::1::::<><>::
+::res://assets_placeholders/::1711970773
+GroundTemplate.png::CompressedTexture2D::3947697154440413853::1711970773::1711970795::1::::<><>::
+PC Computer - Cave Story Dokutsu Monogatari - Casts.png::CompressedTexture2D::7035114269643879751::1711970773::1711970795::1::::<><>::
+PC Computer - Cave Story Dokutsu Monogatari - Quote & Items (1).png::CompressedTexture2D::8021972824314581126::1711970773::1711970796::1::::<><>::
+PlatformTemplate.png::CompressedTexture2D::5416427759107887293::1711970773::1711970795::1::::<><>::
+WallTemplate.png::CompressedTexture2D::4730783357327381049::1711970773::1711970795::1::::<><>::
+::res://Entities/::1711970773
+::res://Entities/Player/::1711970773
+player_caio.tscn::PackedScene::3683451044708454709::1711970773::0::1::::<><>::uid://c17wvvmhaok5f::::res://Entities/Player/Art/Placeholder/player_sprite_placeholder.png<>res://Entities/Player/Scripts/Controller/Player_PlatformerMovement.gd<>uid://d13d0w8x5pgm6::::res://Entities/Player/Scripts/Controller/player_movement_stats.tres<>res://Entities/Player/Scripts/Controller/Player_Jump.gd<>res://Entities/Player/Scripts/Entity/PlayerEntity.gd<>uid://ma2eww7msg5s::::res://Entities/Player/Scripts/Entity/PlayerEntityStats.tres<>res://Entities/Player/Scripts/Controller/Player_Aim.gd
+::res://Entities/Player/Art/::1711970773
+::res://Entities/Player/Art/Placeholder/::1711970773
+player_sprite_placeholder.png::CompressedTexture2D::6665185787464438777::1711970773::1711970795::1::::<><>::
+::res://Entities/Player/Scripts/::1711970773
+::res://Entities/Player/Scripts/Controller/::1711970773
+movementStats_Resource.gd::GDScript::-1::1711970773::0::1::::PlataformerMovementStats<>Resource<>::
+Player_Aim.gd::GDScript::-1::1711970773::0::1::::<>Node<>::
+Player_Jump.gd::GDScript::-1::1711970773::0::1::::PlayerJump<>Node<>::
+Player_Movement.gd::GDScript::-1::1711970773::0::1::::<>CharacterBody2D<>::
+player_movement_stats.tres::Resource/PlataformerMovementStats::9042202566185691335::1711970773::0::1::::<><>::res://Entities/Player/Scripts/Controller/movementStats_Resource.gd
+Player_PlatformerMovement.gd::GDScript::-1::1711970773::0::1::::PlatformerMovement<>Node<>::
+::res://Entities/Player/Scripts/Entity/::1711970773
+PlayerEntity.gd::GDScript::-1::1711970773::0::1::::PlayerEntity<>Entity<>::
+PlayerEntityStats.tres::Resource/EntityResource::843913816606788086::1711970773::0::1::::<><>::res://Entities/Scripts/EntityResource.gd
+::res://Entities/Scripts/::1711970773
+Entity.gd::GDScript::-1::1711970773::0::1::::Entity<>Node<>::
+EntityResource.gd::GDScript::-1::1711970773::0::1::::EntityResource<>Resource<>::
+::res://obj/::1711970773
+particle.tscn::PackedScene::3411038617857462960::1711970773::0::1::::<><>::res://scripts/projParticle.gd<>uid://dmj5yq1jgey5k::::res://assets_placeholders/PC Computer - Cave Story Dokutsu Monogatari - Quote & Items (1).png
+player.tscn::PackedScene::690837221769845976::1711970773::0::1::::<><>::res://scripts/playerControl.gd<>uid://dmj5yq1jgey5k::::res://assets_placeholders/PC Computer - Cave Story Dokutsu Monogatari - Quote & Items (1).png
+projectile.tscn::PackedScene::6853135183320543803::1711970773::0::1::::<><>::res://scripts/projectile.gd<>uid://b8nvktgrdkfhx::::res://assets_placeholders/WallTemplate.png
+::res://scenes/::1711970773
+Caiiru-scene.tscn::PackedScene::1967750926052899440::1711970773::0::1::::<><>::uid://bsqj5vbd6wmrd::::res://Entities/Player/player_caio.tscn<>uid://bwij83v652oan::::res://assets_placeholders/GroundTemplate.png
+TestLevel.tscn::PackedScene::6091087005341361036::1711970773::0::1::::<><>::uid://j3v8uiw6mg21::::res://obj/player.tscn<>uid://cjf01ktduo7k0::::res://assets_placeholders/PlatformTemplate.png<>uid://b8nvktgrdkfhx::::res://assets_placeholders/WallTemplate.png<>uid://bwij83v652oan::::res://assets_placeholders/GroundTemplate.png<>uid://c4vyeuko7f1g6::::res://obj/projectile.tscn<>uid://boulkpw7bal41::::res://obj/particle.tscn<>uid://bsqj5vbd6wmrd::::res://Entities/Player/player_caio.tscn
+::res://scripts/::1711970773
+playerControl.gd::GDScript::-1::1711970773::0::1::::<>CharacterBody2D<>::
+projectile.gd::GDScript::-1::1711970773::0::1::::<>Area2D<>::
+projParticle.gd::GDScript::-1::1711970773::0::1::::<>Area2D<>::
