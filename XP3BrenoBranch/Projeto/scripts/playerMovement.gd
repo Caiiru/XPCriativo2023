@@ -1,8 +1,9 @@
 extends CharacterBody2D
-
+class_name player
 
 const xSpeed = 200.0
 const ySpeed = -280.0
+var dir = 1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -17,7 +18,6 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var dir = 1
 	if Input.is_action_pressed("right"):
 		dir = 1
 		velocity.x = dir * xSpeed

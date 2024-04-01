@@ -2,14 +2,15 @@ extends Node2D
 
 # Cena
 @export var scene : PackedScene
+@export var Player : player
 
-var direction  = 1
 var reload = 0
 # Função de atirar
 func shoot(direction : Vector2) -> void:
 	var new_shot := scene.instantiate() as Shot
 	if new_shot:
-		new_shot.direction = direction
+		new_shot.direction = Vector2(Player.dir, 0.0)
+		new_shot.position = Player.position
 		get_tree().root.add_child(new_shot)
 
 # Funcionamento Constante do Projeto

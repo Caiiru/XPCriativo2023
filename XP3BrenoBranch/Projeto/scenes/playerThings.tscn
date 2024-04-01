@@ -17,6 +17,7 @@ shape = SubResource("RectangleShape2D_db1fe")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_w32da")
 
-[node name="Shooter" type="Node2D" parent="."]
+[node name="Shooter" type="Node2D" parent="." node_paths=PackedStringArray("Player")]
 script = ExtResource("3_wkvwk")
 scene = ExtResource("4_nw8qj")
+Player = NodePath("..")
