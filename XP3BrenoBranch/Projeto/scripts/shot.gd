@@ -1,4 +1,4 @@
-class_name Shot
+class_name Shot10
 extends Area2D
 
 var direction : Vector2

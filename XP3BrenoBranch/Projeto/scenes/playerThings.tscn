@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/playerMovement.gd" id="1_roct2"]
 [ext_resource type="Texture2D" uid="uid://eeeajl88rpui" path="res://textures/playerBox.png" id="2_w32da"]
 [ext_resource type="Script" path="res://scripts/shootStuff.gd" id="3_wkvwk"]
-[ext_resource type="PackedScene" uid="uid://cur8kl4qjyva" path="res://scenes/shot.tscn" id="4_nw8qj"]
+[ext_resource type="PackedScene" uid="uid://cur8kl4qjyva" path="res://scenes/shot10.tscn" id="4_qd6ya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_db1fe"]
 size = Vector2(16, 16)
@@ -19,5 +19,8 @@ texture = ExtResource("2_w32da")
 
 [node name="Shooter" type="Node2D" parent="." node_paths=PackedStringArray("Player")]
 script = ExtResource("3_wkvwk")
-scene = ExtResource("4_nw8qj")
+scene = ExtResource("4_qd6ya")
 Player = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
