@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://grxi6xo406vs"]
+
+[ext_resource type="TileSet" uid="uid://rq6fdvbpfv5" path="res://tilesets/tile_set.tres" id="1_hp23r"]
+[ext_resource type="Script" path="res://scripts/shooter.gd" id="2_4qkej"]
+[ext_resource type="PackedScene" uid="uid://cur8kl4qjyva" path="res://scenes/shot.tscn" id="3_4lttp"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_hp23r")
+format = 2
+layer_0/tile_data = PackedInt32Array(131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, -65532, 0, 0, -65530, 0, 0, -65531, 0, 0, -4, 0, 0, -5, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 131067, 0, 0, -6, 0, 0, 131066, 0, 0)
+
+[node name="Shooter" type="Node2D" parent="."]
+script = ExtResource("2_4qkej")
+scene = ExtResource("3_4lttp")
