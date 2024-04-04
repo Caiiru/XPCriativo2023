@@ -5,6 +5,7 @@ extends Node
 @export var stats:PlataformerMovementStats
 @export var sprite:Sprite2D
 
+var lastDirection:int = 1
 var playerInputs:Vector2
 
 func _ready(): 
@@ -21,17 +22,14 @@ func GatherInput():
 	elif(!stats.canMove && !stats.isJumping):
 		playerInputs = Vector2.ZERO
 	
+	if(playerInputs.x != 0 && lastDirection != playerInputs.x):
+		lastDirection = playerInputs.x
+		actor.apply_scale(Vector2(-1,1))
 	Move(playerInputs)
+	
+
 
 func Move(dir:Vector2): 
 	actor.velocity = Vector2((dir.x*stats.speed), actor.velocity.y)
 	
-	
-	#Change Sprite Direction
-	
-	if(actor.velocity.x > 0): 
-		sprite.flip_h = 1
 
-	if(actor.velocity.x<0): 
-		sprite.flip_h = 0
-	

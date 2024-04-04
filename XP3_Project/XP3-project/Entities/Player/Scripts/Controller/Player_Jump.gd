@@ -31,8 +31,9 @@ var canUseCoyote:bool = false
 var _frameLeftGround:float = -3.40282347
 #endregion
 
-func _process(delta):
-	GatherInput()
+func _process(delta): 
+	if(stats.canMove):
+		GatherInput()
 	_time+=delta
 	 
 	  

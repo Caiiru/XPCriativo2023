@@ -7,7 +7,7 @@ var isAiming:bool = false
 @export var AimSprite:Sprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass # Replace with function body. 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,6 +15,9 @@ func _process(delta):
 	GatherInput()
 
 func GatherInput():
+	playerDirection.x = Input.get_axis("ui_left","ui_right")
+	playerDirection.y = Input.get_axis("ui_down","ui_up")
+	
 	if (Input.is_action_just_pressed("PlayerAim") && stats.canMove == true):
 		stats.canMove = false
 		isAiming = true
@@ -22,8 +25,11 @@ func GatherInput():
 		stats.canMove = true
 		isAiming = false
 		
-		playerDirection.x = Input.get_axis("ui_left","ui_right")
-		playerDirection.y = Input.get_axis("ui_down","ui_up")
+	if(playerDirection.x < 0):
+		pass
+		
+		
+	
 		
 func Aim():
 	if(isAiming):
