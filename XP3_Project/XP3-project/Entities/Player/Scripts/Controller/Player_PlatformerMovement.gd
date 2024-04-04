@@ -17,8 +17,7 @@ func _process(delta):
 
 func GatherInput():
 	if(stats.canMove): 
-		playerInputs.x = Input.get_axis("ui_left","ui_right")
-		playerInputs.y = Input.get_axis("ui_down","ui_up")
+		playerInputs.x = Input.get_axis("ui_left","ui_right") 
 	elif(!stats.canMove && !stats.isJumping):
 		playerInputs = Vector2.ZERO
 	

@@ -35,3 +35,7 @@ func Die():
 	print_debug(actor.name + " is Dead")
 	print_debug(isDead())
 	pass
+	
+func getHealth() -> int:
+	return stats.current_HP
+	
