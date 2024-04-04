@@ -63,6 +63,7 @@ func CheckCollision():
 		_endedJumpEarly = false 
 		_bufferedJumpUsable = true
 		_coyoteUsable = true
+		stats.isJumping = false
 	else: if(_grounded && !groundHit): #left ground
 		_grounded = false 
 		_frameLeftGround = _time
@@ -83,6 +84,7 @@ func ExecuteJump():
 	_coyoteUsable = false
 	_timeJumpWasPressed = 0
 	actor.velocity.y = -(stats.jumpForce * 5)
+	stats.isJumping = true
 	
 
 func HandleGravity(delta):

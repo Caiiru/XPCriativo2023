@@ -4,10 +4,9 @@
 
 [resource]
 script = ExtResource("1_k1nc1")
+canMove = true
+isJumping = false
 speed = 150.0
-jump_height = 400.0
-jump_time_to_peak = 0.25
-jump_time_to_descent = 0.175
 coyote_time = 0.3
 jumpBuffering_time = 0.3
 groundingForce = -1.5

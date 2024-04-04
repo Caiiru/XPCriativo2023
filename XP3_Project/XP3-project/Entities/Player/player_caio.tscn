@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsqj5vbd6wmrd"]
+[gd_scene load_steps=10 format=3 uid="uid://bsqj5vbd6wmrd"]
 
 [ext_resource type="Texture2D" uid="uid://c17wvvmhaok5f" path="res://Entities/Player/Art/Placeholder/player_sprite_placeholder.png" id="1_htdhs"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_PlatformerMovement.gd" id="2_g21dw"]
@@ -7,18 +7,14 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Entity/PlayerEntity.gd" id="5_v1joy"]
 [ext_resource type="Resource" uid="uid://ma2eww7msg5s" path="res://Entities/Player/Scripts/Entity/PlayerEntityStats.tres" id="6_um2ne"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_Aim.gd" id="7_yt30x"]
+[ext_resource type="Texture2D" uid="uid://cjf01ktduo7k0" path="res://Entities/Player/assets_placeholders/PlatformTemplate.png" id="8_3n20j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqm1"]
 size = Vector2(20, 17.5)
 
-[sub_resource type="Gradient" id="Gradient_b63mq"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_l0chb"]
-gradient = SubResource("Gradient_b63mq")
-
 [node name="Player_Caio" type="CharacterBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(4.76837e-07, 0)
 scale = Vector2(0.875, 1)
 texture = ExtResource("1_htdhs")
@@ -31,8 +27,8 @@ shape = SubResource("RectangleShape2D_2vqm1")
 [node name="PlatformerMovement" type="Node" parent="." node_paths=PackedStringArray("actor", "sprite")]
 script = ExtResource("2_g21dw")
 actor = NodePath("..")
-playerMovementStats = ExtResource("3_xsb20")
-sprite = NodePath("../Sprite2D")
+stats = ExtResource("3_xsb20")
+sprite = NodePath("../PlayerSprite")
 
 [node name="PlayerJump" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("4_n26ro")
@@ -46,12 +42,12 @@ damageToTake = 10
 stats = ExtResource("6_um2ne")
 actor = NodePath("..")
 
-[node name="Marker2D" type="Marker2D" parent="." node_paths=PackedStringArray("aim", "actor")]
-position = Vector2(6, 0)
+[node name="PlayerAim" type="Node" parent="." node_paths=PackedStringArray("AimSprite")]
 script = ExtResource("7_yt30x")
-aim = NodePath(".")
-actor = NodePath("..")
+stats = ExtResource("3_xsb20")
+AimSprite = NodePath("../AimSprite")
 
-[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
-scale = Vector2(0.005, 2)
-texture = SubResource("GradientTexture1D_l0chb")
+[node name="AimSprite" type="Sprite2D" parent="."]
+position = Vector2(10, 0)
+scale = Vector2(0.660657, 0.16)
+texture = ExtResource("8_3n20j")
