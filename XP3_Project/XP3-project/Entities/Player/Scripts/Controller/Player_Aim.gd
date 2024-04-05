@@ -30,9 +30,12 @@ func GatherInput():
 	if(stats.direction != aimingDirection.x && isAiming && aimingDirection.x != 0):
 		stats.direction = aimingDirection.x	
 		actor.apply_scale(Vector2(-1,1))
-	if(isAiming):
-		Aim()
+		
+	Aim()
 		
 func Aim():
-	AimObject.look_at(actor.transform.get_origin() + Vector2(aimingDirection.x, -aimingDirection.y))
+	if(isAiming):
+		AimObject.look_at(actor.transform.get_origin() + Vector2(aimingDirection.x, -aimingDirection.y))
+	else:
+		AimObject.look_at(actor.transform.get_origin() + Vector2(stats.direction,0))
 	pass
