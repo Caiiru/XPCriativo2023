@@ -7,6 +7,7 @@ extends Resource
 
 @export_group("Movement Variables")
 @export var speed:float = 100
+@export var direction:int = 1
 
 @export_group("Jump Variables") 
 @export var coyote_time:float = 0.3

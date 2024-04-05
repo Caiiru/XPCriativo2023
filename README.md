@@ -9,8 +9,8 @@
 
 - [X] Remodulate player movement
 - [X] Create Entity
-- [ ] Create player aim <- WIP
-- [ ] First Skill: Fireball
+- [X] Create player aim
+- [ ] First Skill: Fireball  <- WIP
 
 
 
@@ -63,5 +63,13 @@ So, entity resource is a data class that have the current HP and the max HP of a
 
 *Every functionality do what the name means to do*
 
-#### *Date: 04/04/2024*
+### Player Aim
+This script works getting the direction in "movement stats resource" and sync with a local var "aiming direction"
+
+Then, when player press the "aiming button" (Z - placeholder), the actor will stop the inputs and the player cant move anymore. In the aiming state, the player can be aim to the 8 directions with the movement input (arrows)
+
+The "aiming object" shows were the player is aiming (placeholder? ) 
+
+
+#### *Date: 05/04/2024*
 

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cjf01ktduo7k0" path="res://Entities/Player/assets_placeholders/PlatformTemplate.png" id="8_3n20j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqm1"]
-size = Vector2(20, 17.5)
+size = Vector2(14.7059, 17.5)
 
 [node name="Player_Caio" type="CharacterBody2D"]
 
@@ -20,7 +20,7 @@ scale = Vector2(0.875, 1)
 texture = ExtResource("1_htdhs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(1.78814e-07, -1)
 scale = Vector2(0.68, 1)
 shape = SubResource("RectangleShape2D_2vqm1")
 
@@ -42,12 +42,15 @@ damageToTake = 10
 stats = ExtResource("6_um2ne")
 actor = NodePath("..")
 
-[node name="PlayerAim" type="Node" parent="." node_paths=PackedStringArray("AimSprite")]
+[node name="PlayerAim" type="Node" parent="." node_paths=PackedStringArray("AimObject", "actor")]
 script = ExtResource("7_yt30x")
 stats = ExtResource("3_xsb20")
-AimSprite = NodePath("../AimSprite")
+AimObject = NodePath("../Aim")
+actor = NodePath("..")
 
-[node name="AimSprite" type="Sprite2D" parent="."]
+[node name="Aim" type="Node2D" parent="."]
+
+[node name="AimSprite" type="Sprite2D" parent="Aim"]
 position = Vector2(10, 0)
 scale = Vector2(0.660657, 0.16)
 texture = ExtResource("8_3n20j")

@@ -3,8 +3,11 @@ extends Node
 
 @export var stats:PlataformerMovementStats
 var isAiming:bool = false
-@export var playerDirection:Vector2 = Vector2.ZERO 
-@export var AimSprite:Sprite2D
+@export var aimingDirection:Vector2 = Vector2.ZERO 
+@export var AimObject:Node2D
+@export var actor:CharacterBody2D
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body. 
@@ -15,9 +18,8 @@ func _process(delta):
 	GatherInput()
 
 func GatherInput():
-	playerDirection.x = Input.get_axis("ui_left","ui_right")
-	playerDirection.y = Input.get_axis("ui_down","ui_up")
-	
+	aimingDirection.x = Input.get_axis("ui_left","ui_right")
+	aimingDirection.y = Input.get_axis("ui_down","ui_up")
 	if (Input.is_action_just_pressed("PlayerAim") && stats.canMove == true):
 		stats.canMove = false
 		isAiming = true
@@ -25,12 +27,12 @@ func GatherInput():
 		stats.canMove = true
 		isAiming = false
 		
-	if(playerDirection.x < 0):
-		pass
-		
-		
-	
+	if(stats.direction != aimingDirection.x && isAiming && aimingDirection.x != 0):
+		stats.direction = aimingDirection.x	
+		actor.apply_scale(Vector2(-1,1))
+	if(isAiming):
+		Aim()
 		
 func Aim():
-	if(isAiming):
-		pass
+	AimObject.look_at(actor.transform.get_origin() + Vector2(aimingDirection.x, -aimingDirection.y))
+	pass

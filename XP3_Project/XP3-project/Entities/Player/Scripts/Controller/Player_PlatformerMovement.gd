@@ -5,7 +5,6 @@ extends Node
 @export var stats:PlataformerMovementStats
 @export var sprite:Sprite2D
 
-var lastDirection:int = 1
 var playerInputs:Vector2
 
 func _ready(): 
@@ -21,9 +20,12 @@ func GatherInput():
 	elif(!stats.canMove && !stats.isJumping):
 		playerInputs = Vector2.ZERO
 	
-	if(playerInputs.x != 0 && lastDirection != playerInputs.x):
-		lastDirection = playerInputs.x
+	#Check if the player is inputing a diferent direction than before
+	if(playerInputs.x != 0 && stats.direction != playerInputs.x): 
+		stats.direction = playerInputs.x
 		actor.apply_scale(Vector2(-1,1))
+		
+		
 	Move(playerInputs)
 	
 
