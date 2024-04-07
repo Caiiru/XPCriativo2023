@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh7e41c5h5set"]
+
+[ext_resource type="Texture2D" uid="uid://cqlc237vip5v3" path="res://Entities/Player/UI/Hud/Heart/UI_Player_Life-Border.png" id="1_c4sau"]
+[ext_resource type="Texture2D" uid="uid://blpx5axg74t8t" path="res://Entities/Player/UI/Hud/Heart/UI_Player_Life-Half.png" id="2_ovoxq"]
+
+[node name="UiPlayer" type="Node2D"]
+
+[node name="Heart" type="Node2D" parent="."]
+position = Vector2(20, 20)
+
+[node name="Border" type="Sprite2D" parent="Heart"]
+texture = ExtResource("1_c4sau")
+
+[node name="FirstHalf" type="Sprite2D" parent="Heart"]
+texture = ExtResource("2_ovoxq")
+
+[node name="SecondHalf" type="Sprite2D" parent="Heart"]
+scale = Vector2(-1, 1)
+texture = ExtResource("2_ovoxq")
+
+[node name="Heart" type="Node2D" parent="Heart"]
+position = Vector2(20, 0)
+
+[node name="Border" type="Sprite2D" parent="Heart/Heart"]
+texture = ExtResource("1_c4sau")
+
+[node name="FirstHalf" type="Sprite2D" parent="Heart/Heart"]
+texture = ExtResource("2_ovoxq")
+
+[node name="SecondHalf" type="Sprite2D" parent="Heart/Heart"]
+scale = Vector2(-1, 1)
+texture = ExtResource("2_ovoxq")
+
+[node name="Heart" type="Node2D" parent="Heart/Heart"]
+position = Vector2(20, 0)
+
+[node name="Border" type="Sprite2D" parent="Heart/Heart/Heart"]
+texture = ExtResource("1_c4sau")
+
+[node name="FirstHalf" type="Sprite2D" parent="Heart/Heart/Heart"]
+texture = ExtResource("2_ovoxq")
+
+[node name="SecondHalf" type="Sprite2D" parent="Heart/Heart/Heart"]
+scale = Vector2(-1, 1)
+texture = ExtResource("2_ovoxq")

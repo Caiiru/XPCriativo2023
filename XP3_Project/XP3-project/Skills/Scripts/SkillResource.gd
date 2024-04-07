@@ -1,0 +1,20 @@
+class_name SkillResource
+extends Resource
+
+@export var Name:String
+@export var SkillType:Skill_Type
+
+
+@export var firstElement:SkillElement
+@export var secondElement:SkillElement
+
+
+
+enum Skill_Type{DAMAGE, DEFENSE, UTILITY} 
+
+enum SkillElement{
+	NONE,
+	FIRE,
+	AIR,
+	WATER
+}

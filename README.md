@@ -9,8 +9,14 @@
 
 - [X] Remodulate player movement
 - [X] Create Entity
-- [X] Create player aim
-- [ ] First Skill: Fireball  <- WIP
+- [X] Create player Aim
+- [ ] Create Skill System:
+    - [X] Input Element from Keyboard
+    - [ ] Display Selected Element <- WIP
+    - [ ] Display 2 Elements Selected
+    - [ ] Create The List With Recipes For Each Skill
+    - [ ] Use Skill when player input the shot button
+- [ ] First Skill: Fireball  
 
 
 
@@ -71,5 +77,42 @@ Then, when player press the "aiming button" (Z - placeholder), the actor will st
 The "aiming object" shows were the player is aiming (placeholder? ) 
 
 
-#### *Date: 05/04/2024*
+### Player Skill System
+
+Skills work like the entitys. So, "SkillResource" is the main/father script. His variables are: 
+- Name
+
+    _Name means what means to do_
+
+- SkillType (Is Enum)
+
+    _Is the type of skill, Offensive, Defensive or Utility_
+
+- First and Second Element 
+
+    _Is the elements for recipe_ 
+
+- SkillElement (Enum)
+ 
+    _Is the enum for First And Second Element_ 
+
+
+Each type of skill will have a resource child with custom settings:
+
+Offensive Resource:
+ - Damage
+    - _The value of damage, integer number_
+ - Fire Rate 
+ - Damage Skill Type
+    - _Enum with the two types of damage skill: Ball or Laser. Each type will work and process the damage in different way_
+
+Offensive Script:
+ - Just check the resource variables and process the skill based on the type 
+
+
+ ### Player Skill Manager
+
+This is script have an array for the recipes and get the inputs from "GatherInput" func 
+
+#### *Date: 07/04/2024*
 

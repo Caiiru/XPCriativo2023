@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_Aim.gd" id="7_yt30x"]
 [ext_resource type="Texture2D" uid="uid://cjf01ktduo7k0" path="res://Entities/Player/assets_placeholders/PlatformTemplate.png" id="8_3n20j"]
 [ext_resource type="Script" path="res://Entities/Player/Skills/PlayerSkillManager.gd" id="9_02gnq"]
-[ext_resource type="Texture2D" uid="uid://b5lvlc1tga022" path="res://Entities/Player/UI/Hud/Elements/Player_SelectedElement_Border.png" id="11_xr3g0"]
+[ext_resource type="Resource" uid="uid://cl8ni35n8hbew" path="res://Entities/Player/Skills/Fireball/Scripts/FireballResource.tres" id="10_kd1dj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqm1"]
 size = Vector2(14.7059, 17.5)
@@ -46,36 +46,21 @@ damageToTake = 10
 stats = ExtResource("6_um2ne")
 actor = NodePath("../..")
 
-[node name="Aim" type="Node2D" parent="MovementScripts" node_paths=PackedStringArray("AimObject", "actor")]
+[node name="PlayerAim" type="Node" parent="MovementScripts" node_paths=PackedStringArray("AimObject", "actor")]
 script = ExtResource("7_yt30x")
 stats = ExtResource("3_xsb20")
-AimObject = NodePath(".")
+AimObject = NodePath("Aim")
 actor = NodePath("../..")
 
-[node name="AimSprite" type="Sprite2D" parent="MovementScripts/Aim"]
+[node name="Aim" type="Node2D" parent="MovementScripts/PlayerAim"]
+
+[node name="AimSprite" type="Sprite2D" parent="MovementScripts/PlayerAim/Aim"]
 position = Vector2(10, 0)
 scale = Vector2(0.660657, 0.16)
 texture = ExtResource("8_3n20j")
 
 [node name="Skills" type="Node" parent="."]
 script = ExtResource("9_02gnq")
-SkillListRecipe = [null]
+list = [ExtResource("10_kd1dj"), null]
 
 [node name="ElementDisplay" type="Sprite2D" parent="Skills"]
-
-[node name="Skills_Display" type="Node2D" parent="."]
-z_index = 5
-
-[node name="FirstElement" type="Node2D" parent="Skills_Display"]
-position = Vector2(-4, -11)
-scale = Vector2(0.2, 0.2)
-
-[node name="FirstElement_Border" type="Sprite2D" parent="Skills_Display/FirstElement"]
-texture = ExtResource("11_xr3g0")
-
-[node name="SecondElement" type="Node2D" parent="Skills_Display"]
-position = Vector2(3, -11)
-scale = Vector2(0.2, 0.2)
-
-[node name="SecondelElement_Border" type="Sprite2D" parent="Skills_Display/SecondElement"]
-texture = ExtResource("11_xr3g0")

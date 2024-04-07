@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DamageSkillResource" load_steps=2 format=3 uid="uid://cl8ni35n8hbew"]
+
+[ext_resource type="Script" path="res://Skills/Scripts/Damage Skills/DamageSkillResource.gd" id="1_q5ak4"]
+
+[resource]
+script = ExtResource("1_q5ak4")
+damage = 4
+fireRate = 2
+type = 0
+Name = "Fireball"
+SkillType = 0
+firstElement = 1
+secondElement = 2

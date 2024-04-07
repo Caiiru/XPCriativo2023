@@ -7,6 +7,7 @@ script = ExtResource("1_k1nc1")
 canMove = true
 isJumping = false
 speed = 150.0
+direction = 1
 coyote_time = 0.3
 jumpBuffering_time = 0.3
 groundingForce = -1.5
