@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx6kn1c5wiaq0"
-path="res://.godot/imported/Fire_image.png-3dc603b2a30fdade7bae1065104c52fe.ctex"
+uid="uid://coi1mh5abka3c"
+path="res://.godot/imported/Air_Image.png-c93a555630f49ff8005a0891ece8872a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Player/UI/Hud/Elements/Fire_image.png"
-dest_files=["res://.godot/imported/Fire_image.png-3dc603b2a30fdade7bae1065104c52fe.ctex"]
+source_file="res://Skills/Scripts/Element/ElementsSprites/Air_Image.png"
+dest_files=["res://.godot/imported/Air_Image.png-c93a555630f49ff8005a0891ece8872a.ctex"]
 
 [params]
 

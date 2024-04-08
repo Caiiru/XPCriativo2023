@@ -5,16 +5,8 @@ extends Resource
 @export var SkillType:Skill_Type
 
 
-@export var firstElement:SkillElement
-@export var secondElement:SkillElement
-
-
+@export var firstElement:Element
+@export var secondElement:Element
 
 enum Skill_Type{DAMAGE, DEFENSE, UTILITY} 
-
-enum SkillElement{
-	NONE,
-	FIRE,
-	AIR,
-	WATER
-}
+ 

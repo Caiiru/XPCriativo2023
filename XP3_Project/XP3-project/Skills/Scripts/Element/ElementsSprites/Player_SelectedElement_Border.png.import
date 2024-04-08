@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coi1mh5abka3c"
-path="res://.godot/imported/Air_Image.png-4017348113d4232b50291afa47e2076f.ctex"
+uid="uid://b5lvlc1tga022"
+path="res://.godot/imported/Player_SelectedElement_Border.png-e93f9dd454857c03a5ee6e9e7037d74a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Player/UI/Hud/Elements/Air_Image.png"
-dest_files=["res://.godot/imported/Air_Image.png-4017348113d4232b50291afa47e2076f.ctex"]
+source_file="res://Skills/Scripts/Element/ElementsSprites/Player_SelectedElement_Border.png"
+dest_files=["res://.godot/imported/Player_SelectedElement_Border.png-e93f9dd454857c03a5ee6e9e7037d74a.ctex"]
 
 [params]
 

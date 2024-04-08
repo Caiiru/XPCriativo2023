@@ -1,9 +1,9 @@
 extends Node
 
-@export var SkillListRecipe = []
-
-@export var firstElement:SkillResource.SkillElement
-@export var secondElement:SkillResource.SkillElement
+@export var SkillListRecipe:Array[Element] = []
+@export var ElementsAvaible:Array[Element] = [] 
+@export var firstElement:Element
+@export var secondElement:Element
 
 # Called when the node enters the scene tree for the first time. 
 func _ready():
@@ -18,23 +18,23 @@ func _process(delta):
 	
 func GatherInput():
 	if(Input.is_action_just_pressed("FireElement")):
-		print_debug("Fire")
+		AddElement(ElementsAvaible[0])
 		pass
 	if(Input.is_action_just_pressed("AirElement")):
-		print_debug("Air")
+		AddElement(ElementsAvaible[1])
 		pass
 	if(Input.is_action_just_pressed("WaterElement")):
-		print_debug("Water")
+		AddElement(ElementsAvaible[2])
 		pass
 	
 	pass
 	
-func AddElement(element:SkillResource.SkillElement):
-	if(firstElement == SkillResource.SkillElement.NONE):
+func AddElement(element:Element):
+	if(firstElement != null):
 		firstElement = element
 		return
-		pass
-	if(secondElement == SkillResource.SkillElement.NONE):
-		secondElement = element
+	if(secondElement !=null):
+		secondElement=element
 		return
+	
 	pass

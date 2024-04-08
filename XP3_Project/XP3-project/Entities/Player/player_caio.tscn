@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsqj5vbd6wmrd"]
+[gd_scene load_steps=14 format=3 uid="uid://bsqj5vbd6wmrd"]
 
 [ext_resource type="Texture2D" uid="uid://c17wvvmhaok5f" path="res://Entities/Player/Art/Placeholder/player_sprite_placeholder.png" id="1_htdhs"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_PlatformerMovement.gd" id="2_g21dw"]
@@ -9,7 +9,9 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_Aim.gd" id="7_yt30x"]
 [ext_resource type="Texture2D" uid="uid://cjf01ktduo7k0" path="res://Entities/Player/assets_placeholders/PlatformTemplate.png" id="8_3n20j"]
 [ext_resource type="Script" path="res://Entities/Player/Skills/PlayerSkillManager.gd" id="9_02gnq"]
-[ext_resource type="Texture2D" uid="uid://b5lvlc1tga022" path="res://Entities/Player/UI/Hud/Elements/Player_SelectedElement_Border.png" id="11_xr3g0"]
+[ext_resource type="Texture2D" uid="uid://b5lvlc1tga022" path="res://Skills/Scripts/Element/ElementsSprites/Player_SelectedElement_Border.png" id="10_gk7d1"]
+[ext_resource type="Resource" uid="uid://bj23snehu5ogn" path="res://Skills/Scripts/Element/Fire.tres" id="10_plevl"]
+[ext_resource type="Resource" uid="uid://dnrnognkw82aq" path="res://Skills/Scripts/Element/Air.tres" id="11_hleig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqm1"]
 size = Vector2(14.7059, 17.5)
@@ -60,6 +62,7 @@ texture = ExtResource("8_3n20j")
 [node name="Skills" type="Node" parent="."]
 script = ExtResource("9_02gnq")
 SkillListRecipe = [null]
+ElementsAvaible = Array[Resource("res://Skills/Scripts/Element/Element.gd")]([ExtResource("10_plevl"), ExtResource("11_hleig"), null])
 
 [node name="ElementDisplay" type="Sprite2D" parent="Skills"]
 
@@ -71,11 +74,17 @@ position = Vector2(-4, -11)
 scale = Vector2(0.2, 0.2)
 
 [node name="FirstElement_Border" type="Sprite2D" parent="Skills_Display/FirstElement"]
-texture = ExtResource("11_xr3g0")
+texture = ExtResource("10_gk7d1")
+
+[node name="FirstElement_Sprite" type="Sprite2D" parent="Skills_Display/FirstElement"]
 
 [node name="SecondElement" type="Node2D" parent="Skills_Display"]
 position = Vector2(3, -11)
 scale = Vector2(0.2, 0.2)
 
+[node name="SecondElement_Sprite" type="Sprite2D" parent="Skills_Display/SecondElement"]
+position = Vector2(-35, 0)
+scale = Vector2(1, 1)
+
 [node name="SecondelElement_Border" type="Sprite2D" parent="Skills_Display/SecondElement"]
-texture = ExtResource("11_xr3g0")
+texture = ExtResource("10_gk7d1")
