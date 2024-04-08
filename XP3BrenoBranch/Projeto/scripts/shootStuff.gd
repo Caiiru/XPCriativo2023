@@ -1,19 +1,21 @@
 class_name Shooter
 extends Node2D
 # Cena
-@export var scene : PackedScene
+@export var scene10 : PackedScene
+@export var scene20 : PackedScene
 @export var Player : player
 
 var reload = 0 # Tempo de espera para o jogador atirar novamente
 var reloadType = 0 # Os tipos são usados como uma globalização dos vários tempos de espera
-var power1 = 1
-var power2 = 0
+var power1 = 2 # slot 1 de power ups
+var power2 = 0 # slot 2 de power ups
+
 # Função de atirar
 func shoot(direction : Vector2) -> void:
 	# tiro de fogo 1-0
 	if power1 == 1 && power2 == 0:
 		reloadType = 1
-		var new_shot := scene.instantiate() as Shot10
+		var new_shot := scene10.instantiate() as Shot10
 		if new_shot:
 			new_shot.direction = Vector2(Player.dir, 0.0)
 			new_shot.position = Player.position
@@ -22,7 +24,7 @@ func shoot(direction : Vector2) -> void:
 	# tiro de vento 2-0
 	if power1 == 2 && power2 == 0:
 		reloadType = 2
-		var new_shot := scene.instantiate() as Shot20
+		var new_shot := scene20.instantiate() as Shot20
 		if new_shot:
 			new_shot.direction = Vector2(Player.dir, 0.0)
 			new_shot.position = Player.position
