@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://brmpxrxr0ab5q"]
+[gd_scene load_steps=4 format=3 uid="uid://brmpxrxr0ab5q"]
 
+[ext_resource type="Script" path="res://scripts/shot20Logic.gd" id="1_m4pgy"]
 [ext_resource type="Texture2D" uid="uid://ceypw4sctw8nm" path="res://textures/projectiles/32x8.png" id="2_pu2p2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjxfk"]
 size = Vector2(32, 8)
 
-[node name="Shot" type="Area2D"]
+[node name="Shot20" type="Area2D"]
+script = ExtResource("1_m4pgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jjxfk")
