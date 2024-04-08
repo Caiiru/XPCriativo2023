@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbn2mq7fmr5w5"]
+
+[ext_resource type="Texture2D" uid="uid://cxl6oqn6oorx2" path="res://textures/projectiles/8x8.png" id="1_7kc7d"]
+[ext_resource type="Script" path="res://scripts/shot30Logic.gd" id="1_68mdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjxfk"]
+size = Vector2(8, 8)
+
+[node name="Shot30" type="Area2D"]
+script = ExtResource("1_68mdt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jjxfk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7kc7d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
