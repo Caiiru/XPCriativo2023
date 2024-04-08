@@ -61,7 +61,7 @@ texture = ExtResource("8_3n20j")
 
 [node name="Skills" type="Node" parent="."]
 script = ExtResource("9_02gnq")
-SkillListRecipe = [null]
+SkillListRecipe = Array[Resource("res://Skills/Scripts/Element/Element.gd")]([null, null])
 ElementsAvaible = Array[Resource("res://Skills/Scripts/Element/Element.gd")]([ExtResource("10_plevl"), ExtResource("11_hleig"), null])
 
 [node name="ElementDisplay" type="Sprite2D" parent="Skills"]
@@ -84,7 +84,6 @@ scale = Vector2(0.2, 0.2)
 
 [node name="SecondElement_Sprite" type="Sprite2D" parent="Skills_Display/SecondElement"]
 position = Vector2(-35, 0)
-scale = Vector2(1, 1)
 
 [node name="SecondelElement_Border" type="Sprite2D" parent="Skills_Display/SecondElement"]
 texture = ExtResource("10_gk7d1")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://3bgtnhrcwqhs"]
+[gd_scene load_steps=8 format=3 uid="uid://3bgtnhrcwqhs"]
 
 [ext_resource type="PackedScene" uid="uid://bsqj5vbd6wmrd" path="res://Entities/Player/player_caio.tscn" id="1_v5umc"]
 [ext_resource type="Texture2D" uid="uid://bwij83v652oan" path="res://Entities/Player/assets_placeholders/GroundTemplate.png" id="2_ig1j5"]
 [ext_resource type="PackedScene" uid="uid://c24vx65pdkh1c" path="res://Entities/Player/UI/Hud/UI_PlayerLife.tscn" id="3_m5544"]
 [ext_resource type="PackedScene" uid="uid://4hii3xn1yd3a" path="res://Entities/Player/UI/Hud/UI_PlayerElements.tscn" id="4_ru22w"]
+[ext_resource type="Script" path="res://System/SignalManager.gd" id="5_ioagg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8lawi"]
 resource_name = "Ground"
@@ -39,3 +40,6 @@ grow_vertical = 1
 scale = Vector2(1.94035, 1.94035)
 
 [node name="UiPlayerElements" parent="PlayerHUD" instance=ExtResource("4_ru22w")]
+
+[node name="SignalManager" type="Node" parent="."]
+script = ExtResource("5_ioagg")

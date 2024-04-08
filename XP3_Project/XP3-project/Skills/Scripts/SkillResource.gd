@@ -2,6 +2,7 @@ class_name SkillResource
 extends Resource
 
 @export var Name:String
+@export var cooldown:int #Cooldown for skill in seconds
 @export var SkillType:Skill_Type
 
 

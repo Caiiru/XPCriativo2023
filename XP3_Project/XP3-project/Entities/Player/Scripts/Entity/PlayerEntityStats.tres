@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_w41p2")
-current_HP = 10
-max_HP = 10
+current_HP = 22
+max_HP = 22

@@ -8,3 +8,4 @@ extends Resource
 func _init(e_current_HP = 0, e_max_HP = 0):
 	current_HP = e_current_HP
 	max_HP = e_max_HP 
+
