@@ -4,6 +4,7 @@ extends Node2D
 @export var scene10 : PackedScene
 @export var scene20 : PackedScene
 @export var scene30 : PackedScene
+@export var scene12 : PackedScene
 @export var Player : player
 
 var reload = 0 # Tempo de espera para o jogador atirar novamente
@@ -40,6 +41,15 @@ func shoot(direction : Vector2) -> void:
 			new_shot.position = Player.position
 			get_tree().root.add_child(new_shot)
 			
+	# tiro de água 3-0
+	if power1 == 1 && power2 == 2:
+		reloadType = 4
+		var new_shot := scene12.instantiate() as Shot12
+		if new_shot:
+			new_shot.direction = Vector2(Player.dir, 0.0)
+			new_shot.position = Player.position
+			get_tree().root.add_child(new_shot)
+			
 # recarregamento dos vários projéteis
 func _process(_delta : float) -> void:
 	reload = reload - 1
@@ -48,3 +58,4 @@ func _process(_delta : float) -> void:
 		if reloadType == 1: reload = 60
 		if reloadType == 2: reload = 120
 		if reloadType == 3: reload = 30
+		if reloadType == 4: reload = 150
