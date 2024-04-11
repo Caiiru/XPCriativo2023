@@ -1,6 +1,6 @@
 extends Node
 
-@export var SkillListRecipe:Array[Element] = []
+@export var SkillListRecipe:Array[SkillResource] = []
 @export var ElementsAvaible:Array[Element] = [] 
 @export var firstElement:Element
 @export var secondElement:Element
@@ -19,26 +19,33 @@ func _process(delta):
 	
 func GatherInput():
 	if(Input.is_action_just_pressed("FireElement")):
-		AddElement(ElementsAvaible[0])
-		SignalManager.addElement.emit()
+		AddElement(0)
 		pass
 	if(Input.is_action_just_pressed("AirElement")):
-		AddElement(ElementsAvaible[1])
+		AddElement(1)
 		pass
 	if(Input.is_action_just_pressed("WaterElement")):
-		AddElement(ElementsAvaible[2])
+		AddElement(2)
 		pass
 	
+	if(Input.is_action_just_pressed("UseSkill")):
+		useSkill()
 	pass
 	
-func AddElement(element:Element):
-	if(firstElement != null):
-		firstElement = element
-		print_debug("Ffire") 
-		
+func AddElement(elementIndex:int):
+	if(firstElement == null):
+		firstElement = ElementsAvaible[elementIndex]
+		SignalManager.changeElement.emit(1,elementIndex)
 		return
-	if(secondElement !=null):
-		secondElement=element
-		return
+	else:
+		if(secondElement ==null):
+			secondElement= ElementsAvaible[elementIndex]
+			SignalManager.changeElement.emit(2,elementIndex)
+			return
+	pass
 	
+	
+func useSkill():
+	if(secondElement != null):
+		return
 	pass

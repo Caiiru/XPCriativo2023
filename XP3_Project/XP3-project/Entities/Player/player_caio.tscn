@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_Aim.gd" id="7_yt30x"]
 [ext_resource type="Texture2D" uid="uid://cjf01ktduo7k0" path="res://Entities/Player/assets_placeholders/PlatformTemplate.png" id="8_3n20j"]
 [ext_resource type="Script" path="res://Entities/Player/Skills/PlayerSkillManager.gd" id="9_02gnq"]
-[ext_resource type="Texture2D" uid="uid://b5lvlc1tga022" path="res://Skills/Scripts/Element/ElementsSprites/Player_SelectedElement_Border.png" id="10_gk7d1"]
+[ext_resource type="Resource" uid="uid://cl8ni35n8hbew" path="res://Entities/Player/Skills/Fireball/Scripts/FireballResource.tres" id="10_mgeyh"]
 [ext_resource type="Resource" uid="uid://bj23snehu5ogn" path="res://Skills/Scripts/Element/Fire.tres" id="10_plevl"]
 [ext_resource type="Resource" uid="uid://dnrnognkw82aq" path="res://Skills/Scripts/Element/Air.tres" id="11_hleig"]
 
@@ -61,29 +61,5 @@ texture = ExtResource("8_3n20j")
 
 [node name="Skills" type="Node" parent="."]
 script = ExtResource("9_02gnq")
-SkillListRecipe = Array[Resource("res://Skills/Scripts/Element/Element.gd")]([null, null])
+SkillListRecipe = Array[Resource("res://Skills/Scripts/SkillResource.gd")]([ExtResource("10_mgeyh")])
 ElementsAvaible = Array[Resource("res://Skills/Scripts/Element/Element.gd")]([ExtResource("10_plevl"), ExtResource("11_hleig"), null])
-
-[node name="ElementDisplay" type="Sprite2D" parent="Skills"]
-
-[node name="Skills_Display" type="Node2D" parent="."]
-z_index = 5
-
-[node name="FirstElement" type="Node2D" parent="Skills_Display"]
-position = Vector2(-4, -11)
-scale = Vector2(0.2, 0.2)
-
-[node name="FirstElement_Border" type="Sprite2D" parent="Skills_Display/FirstElement"]
-texture = ExtResource("10_gk7d1")
-
-[node name="FirstElement_Sprite" type="Sprite2D" parent="Skills_Display/FirstElement"]
-
-[node name="SecondElement" type="Node2D" parent="Skills_Display"]
-position = Vector2(3, -11)
-scale = Vector2(0.2, 0.2)
-
-[node name="SecondElement_Sprite" type="Sprite2D" parent="Skills_Display/SecondElement"]
-position = Vector2(-35, 0)
-
-[node name="SecondelElement_Border" type="Sprite2D" parent="Skills_Display/SecondElement"]
-texture = ExtResource("10_gk7d1")

@@ -1,6 +1,6 @@
 extends Node
 
-@export var heartObject = preload("res://Entities/Player/UI/Hud/Heart/heart.tscn")
+@export var heartObject = preload("res://Entities/Player/UI/Hud/PlayerLife/Heart/heart.tscn")
 @export var player:EntityResource 
 # Called when the node enters the scene tree for the first time.
 func _ready():

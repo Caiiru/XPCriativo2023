@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blpx5axg74t8t"
-path="res://.godot/imported/UI_Player_Life-Half.png-7fcfe03d26f2f864bcd9f71956198d7f.ctex"
+uid="uid://cqlc237vip5v3"
+path="res://.godot/imported/UI_Player_Life-Border.png-320875687bb151ea617abef6375ee176.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Player/UI/Hud/Heart/UI_Player_Life-Half.png"
-dest_files=["res://.godot/imported/UI_Player_Life-Half.png-7fcfe03d26f2f864bcd9f71956198d7f.ctex"]
+source_file="res://Entities/Player/UI/Hud/PlayerLife/Heart/UI_Player_Life-Border.png"
+dest_files=["res://.godot/imported/UI_Player_Life-Border.png-320875687bb151ea617abef6375ee176.ctex"]
 
 [params]
 

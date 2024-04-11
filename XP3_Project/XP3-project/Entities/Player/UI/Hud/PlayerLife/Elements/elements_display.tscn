@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b35k2laafrrd7"]
+
+[ext_resource type="Texture2D" uid="uid://b5lvlc1tga022" path="res://Skills/Scripts/Element/ElementsSprites/Player_SelectedElement_Border.png" id="1_udlfg"]
+
+[node name="Elements_Display" type="Node2D"]
+z_index = 5
+
+[node name="FirstElement" type="Node2D" parent="."]
+position = Vector2(-4, -11)
+scale = Vector2(0.2, 0.2)
+
+[node name="FirstElement_Border" type="Sprite2D" parent="FirstElement"]
+texture = ExtResource("1_udlfg")
+
+[node name="FirstElement_Sprite" type="Sprite2D" parent="FirstElement"]
+
+[node name="SecondElement" type="Node2D" parent="."]
+position = Vector2(3, -11)
+scale = Vector2(0.2, 0.2)
+
+[node name="SecondElement_Sprite" type="Sprite2D" parent="SecondElement"]
+position = Vector2(-35, 0)
+
+[node name="SecondelElement_Border" type="Sprite2D" parent="SecondElement"]
+texture = ExtResource("1_udlfg")
