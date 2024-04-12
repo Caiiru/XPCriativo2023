@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6um7hh18rprk"]
+[gd_scene load_steps=7 format=3 uid="uid://c6um7hh18rprk"]
 
 [ext_resource type="Script" path="res://Entities/Player/UI/Hud/HudController.gd" id="1_s78mq"]
 [ext_resource type="PackedScene" uid="uid://b35k2laafrrd7" path="res://Entities/Player/UI/Hud/PlayerLife/Elements/elements_display.tscn" id="2_ieqsd"]
 [ext_resource type="PackedScene" uid="uid://c24vx65pdkh1c" path="res://Entities/Player/UI/Hud/PlayerLife/Heart/UI_PlayerLife.tscn" id="2_mb7da"]
 [ext_resource type="Texture2D" uid="uid://dx6kn1c5wiaq0" path="res://Skills/Scripts/Element/ElementsSprites/Fire_image.png" id="3_36xwl"]
-[ext_resource type="Script" path="res://Entities/Player/UI/Hud/PlayerLife/Elements/UI_ElementsDisplay.gd" id="3_du38t"]
 [ext_resource type="Texture2D" uid="uid://coi1mh5abka3c" path="res://Skills/Scripts/Element/ElementsSprites/Air_Image.png" id="4_hcngn"]
 [ext_resource type="Texture2D" uid="uid://b7mdirgtfs26e" path="res://Skills/Scripts/Element/ElementsSprites/Water_image.png" id="5_tawvd"]
 
@@ -21,7 +20,7 @@ grow_vertical = 1
 scale = Vector2(1.94035, 1.94035)
 
 [node name="Elements_Display" parent="." instance=ExtResource("2_ieqsd")]
-script = ExtResource("3_du38t")
+position = Vector2(130, 68)
 
 [node name="FireElement" type="Node2D" parent="."]
 position = Vector2(30, 320)

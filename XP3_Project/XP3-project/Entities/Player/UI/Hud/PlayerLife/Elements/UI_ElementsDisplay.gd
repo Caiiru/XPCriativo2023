@@ -1,12 +1,12 @@
 extends Node
-
-signal changeFirstElement(value)
-signal changeSecondElement(value)
+ 
+@export var Elements:Array[Element] = []
+@export var firstElementSprite:Sprite2D
+@export var secondElementSprite:Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	changeFirstElement.connect(_on_ChangedFirstElement)
-	changeSecondElement.connect(_on_ChangedSecondElement)
+	SignalManager.connect("playerInputElement",_handleWithPlayerInputElement)
 	pass # Replace with function body.
 
 
@@ -17,8 +17,14 @@ func _process(delta):
 func _ChangeElement(): 
 	pass
 	
-func _on_ChangedFirstElement(value):
-	pass
-
-func _on_ChangedSecondElement(value):
+func _handleWithPlayerInputElement(valuePosition,valueIndex):  
+	if(valueIndex == -1):
+		firstElementSprite.texture = null
+		secondElementSprite.texture = null 
+	else:
+		if(valuePosition == 1):
+			firstElementSprite.texture = Elements[valueIndex].sprite
+		if(valuePosition == 2):
+			secondElementSprite.texture = Elements[valueIndex].sprite
+	
 	pass

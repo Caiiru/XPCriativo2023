@@ -1,17 +1,22 @@
 class_name Skill
-extends Node
+extends Resource
 
-@export var stats:SkillResource
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var Name:String
+@export var cooldown:int #Cooldown for skill in seconds
+@export var SkillType:Skill_Type
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+
+@export var firstElement:Element
+@export var secondElement:Element
+
+@export var object:PackedScene
+func Create(startPosition:Vector2):
+	pass
+
+func Run():
 	pass
 	
-	
-	
+
+enum Skill_Type{DAMAGE, DEFENSE, UTILITY} 
+ 
