@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://4oja1x3uo0cv"]
+
+[ext_resource type="Script" path="res://PROCGEN TEST/Level_PROCGEN.gd" id="1_la4mq"]
+[ext_resource type="Texture2D" uid="uid://csuugca65nd0v" path="res://PROCGEN TEST/grass.png" id="2_tsy44"]
+[ext_resource type="Texture2D" uid="uid://dqewdmlw8xg50" path="res://PROCGEN TEST/stone.png" id="3_tnhp1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5jjve"]
+texture = ExtResource("2_tsy44")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_we76h"]
+texture = ExtResource("3_tnhp1")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4fx5g"]
+sources/0 = SubResource("TileSetAtlasSource_5jjve")
+sources/1 = SubResource("TileSetAtlasSource_we76h")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_la4mq")
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_4fx5g")
+format = 2
