@@ -11,13 +11,12 @@ func _ready():
 func _process(delta):
 	pass
 
-func Create(startPosition:Vector2):
-	var instance = fireballInstance.instantiate()
+func Create(scene:Node2D, startPosition:Vector2):
+	var instance := fireballInstance.instantiate() as Node2D
 	print_debug("Create Fireball")
-	SignalManager.add_child(instance)
+	scene.add_child(instance)
 	if(instance):
+		instance.global_position = startPosition
 		print_debug(instance.has_node("Transform2D"))
-		instance.transform.x = Vector2(startPosition.x,0)
-		instance.transform.y = Vector2(0,startPosition.y) 
 		# TO DO: Instantiate on player position
 	

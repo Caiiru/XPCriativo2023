@@ -15,30 +15,37 @@ elements_display = NodePath("Elements_Display")
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 9.0
+offset_bottom = 9.0
 grow_horizontal = 1
 grow_vertical = 1
-scale = Vector2(1.94035, 1.94035)
+scale = Vector2(1.1, 1.1)
 
 [node name="Elements_Display" parent="." instance=ExtResource("2_ieqsd")]
 position = Vector2(130, 68)
 
-[node name="FireElement" type="Node2D" parent="."]
-position = Vector2(30, 320)
+[node name="Elements" type="Node2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="FireElement" type="Node2D" parent="Elements"]
+position = Vector2(30, 210)
 scale = Vector2(0.5, 0.5)
 
-[node name="Fire_Sprite" type="Sprite2D" parent="FireElement"]
+[node name="Fire_Sprite" type="Sprite2D" parent="Elements/FireElement"]
 texture = ExtResource("3_36xwl")
 
-[node name="AirElement" type="Node2D" parent="."]
-position = Vector2(78, 320)
+[node name="AirElement" type="Node2D" parent="Elements"]
+position = Vector2(78, 210)
 scale = Vector2(0.5, 0.5)
 
-[node name="Air_Sprite" type="Sprite2D" parent="AirElement"]
+[node name="Air_Sprite" type="Sprite2D" parent="Elements/AirElement"]
 texture = ExtResource("4_hcngn")
 
-[node name="WaterElement" type="Node2D" parent="."]
-position = Vector2(126, 320)
+[node name="WaterElement" type="Node2D" parent="Elements"]
+position = Vector2(126, 210)
 scale = Vector2(0.5, 0.5)
 
-[node name="Water_Sprite" type="Sprite2D" parent="WaterElement"]
+[node name="Water_Sprite" type="Sprite2D" parent="Elements/WaterElement"]
 texture = ExtResource("5_tawvd")

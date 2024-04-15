@@ -15,4 +15,3 @@ script = ExtResource("1_10nw0")
 player = ExtResource("2_mmvrb")
 
 [node name="Heart" parent="." instance=ExtResource("3_2rei3")]
-position = Vector2(20, 20)

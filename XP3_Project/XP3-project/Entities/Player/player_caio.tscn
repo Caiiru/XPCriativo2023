@@ -43,11 +43,10 @@ shape = SubResource("RectangleShape2D_2vqm1")
 
 [node name="MovementScripts" type="Node2D" parent="."]
 
-[node name="PlatformerMovement" type="Node" parent="MovementScripts" node_paths=PackedStringArray("actor", "sprite")]
+[node name="PlatformerMovement" type="Node" parent="MovementScripts" node_paths=PackedStringArray("actor")]
 script = ExtResource("2_g21dw")
 actor = NodePath("../..")
 stats = ExtResource("3_xsb20")
-sprite = NodePath("")
 
 [node name="PlayerJump" type="Node" parent="MovementScripts" node_paths=PackedStringArray("actor")]
 script = ExtResource("4_n26ro")

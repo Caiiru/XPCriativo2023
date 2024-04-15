@@ -61,7 +61,7 @@ func useSkill(startPosition:Vector2):
 		for skill in SkillListRecipe:
 			if(firstElement != skill.firstElement || secondElement != skill.secondElement):
 				return 
-			skill.Create(startPosition)
+			skill.Create(get_tree().current_scene, startPosition)
 			pass
 		
 			break

@@ -11,7 +11,8 @@ extends Resource
 @export var secondElement:Element
 
 @export var object:PackedScene
-func Create(startPosition:Vector2):
+func Create(scene:Node2D, playerPosition:Vector2):
+	
 	pass
 
 func Run():
