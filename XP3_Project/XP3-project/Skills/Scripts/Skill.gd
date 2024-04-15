@@ -8,15 +8,11 @@ extends Resource
 
 
 @export var firstElement:Element
-@export var secondElement:Element
+@export var secondElement:Element 
 
-@export var object:PackedScene
 func Create(scene:Node2D, playerPosition:Vector2, direction:Vector2):
-	
 	pass
-
-func Run():
-	pass
+ 
 	
 
 enum Skill_Type{DAMAGE, DEFENSE, UTILITY} 

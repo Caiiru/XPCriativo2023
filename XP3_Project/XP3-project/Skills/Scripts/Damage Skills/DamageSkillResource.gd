@@ -5,6 +5,7 @@ extends Skill
 
 @export var damage:int
 @export var type: DamageSkillType
+@export var wasCreated:bool
 
 enum DamageSkillType{
 	BALL,

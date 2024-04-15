@@ -12,11 +12,11 @@
 - [X] Create player Aim
 - [ ] Create Skill System:
     - [X] Input Element from Keyboard
-    - [ ] Display Selected Element <- WIP
-    - [ ] Display 2 Elements Selected
-    - [ ] Create The List With Recipes For Each Skill
-    - [ ] Use Skill when player input the shot button
-- [ ] First Skill: Fireball  
+    - [X] Display Selected Element <- WIP
+    - [X] Display 2 Elements Selected
+    - [X] Create The List With Recipes For Each Skill
+    - [X] Use Skill when player input the shot button
+- [ ] First Skill: Fireball <- WIP  
 
 
 

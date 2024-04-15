@@ -6,8 +6,10 @@
 
 [resource]
 script = ExtResource("1_8gbcv")
+projectileSpeed = 10.0
 damage = 4
 type = 0
+wasCreated = false
 Name = "Fireball"
 cooldown = 2
 SkillType = 0

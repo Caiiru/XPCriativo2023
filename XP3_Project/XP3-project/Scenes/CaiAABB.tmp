@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://3bgtnhrcwqhs"]
+[gd_scene load_steps=9 format=3 uid="uid://3bgtnhrcwqhs"]
 
 [ext_resource type="PackedScene" uid="uid://bsqj5vbd6wmrd" path="res://Entities/Player/player_caio.tscn" id="1_v5umc"]
 [ext_resource type="Texture2D" uid="uid://bwij83v652oan" path="res://Entities/Player/assets_placeholders/GroundTemplate.png" id="2_ig1j5"]
 [ext_resource type="PackedScene" uid="uid://c6um7hh18rprk" path="res://Entities/Player/UI/Hud/player_hud.tscn" id="3_404ls"]
+[ext_resource type="PackedScene" uid="uid://qw13mch62wdc" path="res://Entities/Player/Skills/Fireball/Fireball_Projectile.tscn" id="5_d3104"]
 [ext_resource type="Script" path="res://System/SignalManager.gd" id="5_ioagg"]
+[ext_resource type="Script" path="res://Entities/Player/Skills/Fireball/debug_rotation.gd" id="6_b18dx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8lawi"]
 resource_name = "Ground"
@@ -33,3 +35,7 @@ layer_0/tile_data = PackedInt32Array(2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0
 script = ExtResource("5_ioagg")
 
 [node name="PlayerHUD" parent="." instance=ExtResource("3_404ls")]
+
+[node name="FireballProjectile" parent="." instance=ExtResource("5_d3104")]
+position = Vector2(237, 72)
+script = ExtResource("6_b18dx")
