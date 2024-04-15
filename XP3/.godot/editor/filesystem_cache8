@@ -1,0 +1,19 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1713040561
+icon.svg::CompressedTexture2D::4475426808852330472::1713040482::1713040482::1::::<><>::
+::res://assets_placeholders/::1713040482
+GroundTemplate.png::CompressedTexture2D::3947697154440413853::1713040482::1713040482::1::::<><>::
+PC Computer - Cave Story Dokutsu Monogatari - Casts.png::CompressedTexture2D::7035114269643879751::1713040482::1713040482::1::::<><>::
+PC Computer - Cave Story Dokutsu Monogatari - Quote & Items (1).png::CompressedTexture2D::8021972824314581126::1713040482::1713040482::1::::<><>::
+PlatformTemplate.png::CompressedTexture2D::5416427759107887293::1713040482::1713040482::1::::<><>::
+WallTemplate.png::CompressedTexture2D::4730783357327381049::1713040482::1713040482::1::::<><>::
+::res://obj/::1713040482
+particle.tscn::PackedScene::3411038617857462960::1713040482::0::1::::<><>::res://scripts/projParticle.gd<>uid://dmj5yq1jgey5k::::res://assets_placeholders/PC Computer - Cave Story Dokutsu Monogatari - Quote & Items (1).png
+player.tscn::PackedScene::690837221769845976::1713040482::0::1::::<><>::res://scripts/playerControl.gd<>uid://dmj5yq1jgey5k::::res://assets_placeholders/PC Computer - Cave Story Dokutsu Monogatari - Quote & Items (1).png
+projectile.tscn::PackedScene::6853135183320543803::1713040482::0::1::::<><>::res://scripts/projectile.gd<>uid://b8nvktgrdkfhx::::res://assets_placeholders/WallTemplate.png
+::res://scenes/::1713040482
+TestLevel.tscn::PackedScene::6091087005341361036::1713040482::0::1::::<><>::uid://j3v8uiw6mg21::::res://obj/player.tscn<>uid://cjf01ktduo7k0::::res://assets_placeholders/PlatformTemplate.png<>uid://b8nvktgrdkfhx::::res://assets_placeholders/WallTemplate.png<>uid://bwij83v652oan::::res://assets_placeholders/GroundTemplate.png<>uid://c4vyeuko7f1g6::::res://obj/projectile.tscn<>uid://boulkpw7bal41::::res://obj/particle.tscn
+::res://scripts/::1713040482
+playerControl.gd::GDScript::-1::1713040482::0::1::::<>CharacterBody2D<>::
+projectile.gd::GDScript::-1::1713040482::0::1::::<>Area2D<>::
+projParticle.gd::GDScript::-1::1713040482::0::1::::<>Area2D<>::

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EntityResource" load_steps=2 format=3 uid="uid://bmmn1etmucbnw"]
+
+[ext_resource type="Script" path="res://Entities/Scripts/EntityResource.gd" id="1_dkpu7"]
+
+[resource]
+script = ExtResource("1_dkpu7")
+current_HP = 22
+max_HP = 22

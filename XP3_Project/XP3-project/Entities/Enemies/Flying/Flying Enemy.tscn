@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd3mvy545p5hc"]
+
+[ext_resource type="Script" path="res://Entities/Enemies/Flying/Script/EnemyFlying_PlatformerMovement.gd" id="1_6x0eg"]
+[ext_resource type="Texture2D" uid="uid://dl4dy1wa57tvx" path="res://Entities/Enemies/Flying/Art/pngimg.com - pentacle_PNG36.png" id="2_5icna"]
+[ext_resource type="Script" path="res://Entities/Enemies/Basic/Scripts/BasicEnemyEntity.gd" id="3_82nbw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o57w3"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4f11r"]
+radius = 11.7647
+
+[node name="Flying Enemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_6x0eg")
+sprite = NodePath("EnemySprite")
+
+[node name="EnemySprite" type="Sprite2D" parent="."]
+position = Vector2(-2.98023e-08, -2.98023e-08)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("2_5icna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o57w3")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0, -5.96046e-08)
+scale = Vector2(0.0133333, 0.0133333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 4.47035e-06)
+scale = Vector2(51, 51)
+shape = SubResource("CircleShape2D_4f11r")
+
+[node name="PlatformerMovement" type="Node" parent="."]
+
+[node name="EnemyEntity" type="Node" parent="."]
+script = ExtResource("3_82nbw")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
