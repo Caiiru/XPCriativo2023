@@ -23,6 +23,7 @@ func Create(scene:Node2D, startPosition:Vector2,dir:Vector2):
 		Rotate(dir) 
 		wasCreated=true
 	
+	
 func Rotate(targetDirection:Vector2):
 	currentInstance.look_at(currentInstance.global_position + Vector2(targetDirection.x, targetDirection.y))
 	pass

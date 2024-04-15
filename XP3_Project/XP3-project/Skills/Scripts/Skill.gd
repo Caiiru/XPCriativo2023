@@ -10,7 +10,10 @@ extends Resource
 @export var firstElement:Element
 @export var secondElement:Element 
 
+signal _SkillCreated
+
 func Create(scene:Node2D, playerPosition:Vector2, direction:Vector2):
+	_SkillCreated.emit()
 	pass
  
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bsqj5vbd6wmrd"]
+[gd_scene load_steps=19 format=3 uid="uid://bsqj5vbd6wmrd"]
 
 [ext_resource type="Texture2D" uid="uid://c82tigff0ol23" path="res://Entities/Player/Art/sprite/Idle_v01/IdleBody.png" id="1_kxqlw"]
 [ext_resource type="Texture2D" uid="uid://sn53chyu7pq8" path="res://Entities/Player/Art/sprite/Idle_v01/IdleEyes.png" id="2_1cwjf"]
@@ -9,13 +9,14 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Entity/PlayerEntity.gd" id="5_v1joy"]
 [ext_resource type="Resource" uid="uid://ma2eww7msg5s" path="res://Entities/Player/Scripts/Entity/PlayerEntityStats.tres" id="6_um2ne"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/Controller/Player_Aim.gd" id="7_yt30x"]
-[ext_resource type="Script" path="res://Entities/Player/Skills/PlayerSkillManager.gd" id="9_02gnq"]
 [ext_resource type="Texture2D" uid="uid://h2yidgp5ftpq" path="res://Entities/Player/Art/sprite/Idle_v01/IdleWandHand.png" id="10_om2bj"]
 [ext_resource type="Resource" uid="uid://bj23snehu5ogn" path="res://Skills/Scripts/Element/Fire.tres" id="10_plevl"]
 [ext_resource type="Resource" uid="uid://dnrnognkw82aq" path="res://Skills/Scripts/Element/Air.tres" id="11_hleig"]
-[ext_resource type="Resource" uid="uid://cly8la6amvgct" path="res://Entities/Player/Skills/Fireball/Scripts/Fireball_Resource.tres" id="12_ax685"]
+[ext_resource type="Resource" uid="uid://c88ybhbvqot4g" path="res://Entities/Player/Skills/Recipes/FireballRecipe.tres" id="12_7rf5n"]
 [ext_resource type="Resource" uid="uid://csndbfeidh53y" path="res://Skills/Scripts/Element/Water.tres" id="15_g3hkm"]
 [ext_resource type="Resource" uid="uid://d3bimmm8raqct" path="res://Skills/Scripts/Element/None.tres" id="16_aa3se"]
+[ext_resource type="PackedScene" uid="uid://b0k1p8s54adnf" path="res://Entities/Player/Skills/Player_Skill_RecipeManager.tscn" id="17_ebcku"]
+[ext_resource type="PackedScene" uid="uid://dd11ejnjblvvy" path="res://Entities/Player/Skills/Player_Skill_InputManager.tscn" id="18_soesp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqm1"]
 size = Vector2(14.7059, 17.5)
@@ -70,9 +71,8 @@ actor = NodePath("../..")
 position = Vector2(9, -3)
 texture = ExtResource("10_om2bj")
 
-[node name="Skills" type="Node" parent="."]
-script = ExtResource("9_02gnq")
-SkillListRecipe = Array[Resource("res://Skills/Scripts/Skill.gd")]([ExtResource("12_ax685")])
+[node name="PlayerSkillRecipeManager" parent="." instance=ExtResource("17_ebcku")]
+RecipeList = Array[Resource("res://Skills/Scripts/Recipe.gd")]([ExtResource("12_7rf5n")])
+
+[node name="PlayerSkillInputManager" parent="." instance=ExtResource("18_soesp")]
 ElementsAvaible = Array[Resource("res://Skills/Scripts/Element/Element.gd")]([ExtResource("11_hleig"), ExtResource("10_plevl"), ExtResource("15_g3hkm"), ExtResource("16_aa3se")])
-firstElement = ExtResource("16_aa3se")
-secondElement = ExtResource("16_aa3se")

@@ -18,8 +18,8 @@ func _process(delta):
 	GatherInput()
 
 func GatherInput():
-	aimingDirection.x = Input.get_axis("ui_left","ui_right")
-	aimingDirection.y = Input.get_axis("ui_up","ui_down")
+	
+	
 	if (Input.is_action_just_pressed("PlayerAim") && stats.canMove == true):
 		stats.canMove = false
 		isAiming = true
@@ -35,7 +35,11 @@ func GatherInput():
 		
 func Aim():
 	if(isAiming):
+		aimingDirection.x = Input.get_axis("ui_left","ui_right")
+		aimingDirection.y = Input.get_axis("ui_up","ui_down")	
 		AimObject.look_at(actor.transform.get_origin() + Vector2(aimingDirection.x, aimingDirection.y))
 	else:
 		AimObject.look_at(actor.transform.get_origin() + Vector2(stats.direction,0))
+		aimingDirection.x = stats.direction
+		aimingDirection.y = 0
 	pass
