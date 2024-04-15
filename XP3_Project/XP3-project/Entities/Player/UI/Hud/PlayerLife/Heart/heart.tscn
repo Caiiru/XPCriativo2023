@@ -1,17 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://jj2y05s8637x"]
+[gd_scene load_steps=4 format=3 uid="uid://jj2y05s8637x"]
 
-[ext_resource type="Texture2D" uid="uid://cqlc237vip5v3" path="res://Entities/Player/UI/Hud/PlayerLife/Heart/UI_Player_Life-Border.png" id="1_y5de1"]
+[ext_resource type="Texture2D" uid="uid://cxiv52vrm1bjj" path="res://Entities/Player/UI/Hud/PlayerLife/Heart/HeartUI-border.png" id="1_4ep07"]
 [ext_resource type="Texture2D" uid="uid://blpx5axg74t8t" path="res://Entities/Player/UI/Hud/PlayerLife/Heart/UI_Player_Life-Half.png" id="2_7og70"]
+[ext_resource type="Texture2D" uid="uid://q3mnej7snyv7" path="res://Entities/Player/UI/Hud/PlayerLife/Heart/HeartUI-half.png" id="2_amox4"]
 
 [node name="Heart" type="Node2D"]
 
 [node name="Border" type="Sprite2D" parent="."]
-texture = ExtResource("1_y5de1")
+texture = ExtResource("1_4ep07")
 
 [node name="FirstHalf" type="Sprite2D" parent="."]
-texture = ExtResource("2_7og70")
+texture = ExtResource("2_amox4")
 
 [node name="SecondHalf" type="Sprite2D" parent="."]
+visible = false
 rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("2_7og70")
