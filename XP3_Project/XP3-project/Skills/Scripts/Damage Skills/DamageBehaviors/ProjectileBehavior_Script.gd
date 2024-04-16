@@ -10,21 +10,19 @@ var direction:Vector2
 func _ready():
 	
 	
-	projectile = get_parent() as Node2D
-	if (projectile == null): 
-		print_debug("Pai não encontrado")
+	projectile = get_parent()
 	
-	var angle = projectile.rotation_degrees 
-	print_debug(projectile.global_position)
-	direction.y = sin(angle)
-	direction.x = cos(angle)
-	print_debug(angle)
-	print_debug(direction)
+	print_debug(projectile)
+	print_debug(projectile.position)
+	#var angle = projectile.rotation_degrees  
+	#direction.y = sin(angle)
+	#direction.x = cos(angle) 
 	pass # Replace with function body.
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#projectile.global_position.x += + 200 * delta
-	projectile.global_position += (direction * 0) * delta
+	#projectile.global_position += (direction * 0) * delta
 	pass

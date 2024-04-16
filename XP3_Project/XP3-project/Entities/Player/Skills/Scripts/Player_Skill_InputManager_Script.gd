@@ -7,6 +7,7 @@ extends Node2D
 @export var firstElement:Element
 @export var secondElement:Element
 
+
 var facingDirection:Vector2
 var aimObject:Player_Aim
 
@@ -75,8 +76,7 @@ func AddElement(elementIndex:int):
 func useSkill(startPosition:Vector2):
 	if(secondElement != ElementsAvaible[3]):
 		#envia o sinal para a recipe list e recebe como sinal de skill
-		recipeList._inputTwoElements.emit(firstElement,secondElement)
-	
+		recipeList._inputTwoElements.emit(firstElement,secondElement,player.global_position,aimObject.stats.direction)
 	resetSelectedElements()
 	#print_debug(facingDirection)
 	#
@@ -101,6 +101,6 @@ func resetSelectedElements():
 	
 
 func _onSkillReceived(_skill:Skill):
-	facingDirection = aimObject.aimingDirection
-	_skill.Create(get_tree().current_scene, player.global_position, facingDirection)
+	facingDirection = aimObject.aimingDirection  
+	
 	pass

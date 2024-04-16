@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bsqj5vbd6wmrd"]
+[gd_scene load_steps=20 format=3 uid="uid://bsqj5vbd6wmrd"]
 
 [ext_resource type="Texture2D" uid="uid://c82tigff0ol23" path="res://Entities/Player/Art/sprite/Idle_v01/IdleBody.png" id="1_kxqlw"]
 [ext_resource type="Texture2D" uid="uid://sn53chyu7pq8" path="res://Entities/Player/Art/sprite/Idle_v01/IdleEyes.png" id="2_1cwjf"]
@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://d3bimmm8raqct" path="res://Skills/Scripts/Element/None.tres" id="16_aa3se"]
 [ext_resource type="PackedScene" uid="uid://b0k1p8s54adnf" path="res://Entities/Player/Skills/Player_Skill_RecipeManager.tscn" id="17_ebcku"]
 [ext_resource type="PackedScene" uid="uid://dd11ejnjblvvy" path="res://Entities/Player/Skills/Player_Skill_InputManager.tscn" id="18_soesp"]
+[ext_resource type="PackedScene" uid="uid://c57ac2gvjbu6x" path="res://Skills/emptySkill.tscn" id="18_vr52l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqm1"]
 size = Vector2(14.7059, 17.5)
@@ -73,6 +74,7 @@ texture = ExtResource("10_om2bj")
 
 [node name="PlayerSkillRecipeManager" parent="." instance=ExtResource("17_ebcku")]
 RecipeList = Array[Resource("res://Skills/Scripts/Recipe.gd")]([ExtResource("12_7rf5n")])
+emptySkill = ExtResource("18_vr52l")
 
 [node name="PlayerSkillInputManager" parent="." instance=ExtResource("18_soesp")]
 ElementsAvaible = Array[Resource("res://Skills/Scripts/Element/Element.gd")]([ExtResource("11_hleig"), ExtResource("10_plevl"), ExtResource("15_g3hkm"), ExtResource("16_aa3se")])

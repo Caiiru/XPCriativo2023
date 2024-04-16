@@ -5,17 +5,20 @@ var intValue = 0
 
 signal in_changeElement(elementPosition,elementIndex) #sinal para receber a input de skill
 signal in_playerPosition(position, scene) #sinal para passar a posição atual do player
+signal in_createNewSkill(skillData, position, direction)
 
 #endregion
 
 #region Output Signal
 signal playerInputElement(valuePosition,valueIndex )
+signal out_createNewSkill(skillData,position,direction)
 #endregion
  
 
 func _ready(): 
 	in_changeElement.connect(_on_changedElement) 
 	in_playerPosition.connect(_on_player_position)
+	in_createNewSkill.connect(_on_in_create_new_skill)
 	pass
 	
 func _process(delta):
@@ -32,3 +35,7 @@ func _on_changedElement(elementPosition,elementIndex):
 func _on_player_position(position, scene):
 	
 	pass
+
+
+func _on_in_create_new_skill(skillData, position, direction):
+	out_createNewSkill.emit(skillData,position,direction) 

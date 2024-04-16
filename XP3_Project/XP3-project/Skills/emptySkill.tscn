@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c57ac2gvjbu6x"]
+
+[ext_resource type="Script" path="res://Skills/SkillReceiver.gd" id="1_0osni"]
+
+[node name="EmptySkill" type="Node2D"]
+
+[node name="SkillReceiver" type="Node2D" parent="."]
+script = ExtResource("1_0osni")
