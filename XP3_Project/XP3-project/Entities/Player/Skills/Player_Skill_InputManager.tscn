@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd11ejnjblvvy"]
-
-[ext_resource type="Script" path="res://Entities/Player/Skills/Scripts/Player_Skill_InputManager_Script.gd" id="1_83o18"]
-
-[node name="PlayerSkillInputManager" type="Node2D"]
-script = ExtResource("1_83o18")

@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://csndbfeidh53y"]
-
-[ext_resource type="Script" path="res://Skills/Scripts/Element/Element.gd" id="1_r666e"]
-[ext_resource type="Texture2D" uid="uid://b7mdirgtfs26e" path="res://Skills/Scripts/Element/ElementsSprites/Water_image.png" id="2_pomcy"]
-
-[resource]
-script = ExtResource("1_r666e")
-sprite = ExtResource("2_pomcy")
